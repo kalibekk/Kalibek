@@ -7,7 +7,8 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'pass'
 app.config['MYSQL_DB'] = 'logtest'
-print("111")
+print("connect successful")
+
 mysql = MySQL(app)
 
 
@@ -17,11 +18,8 @@ def index():
         details = request.form
         username = details['username1']
         password = details['password1']
-        print("222")
-        cur = mysql.connection.cursor()
-        print("333")
-        cur.execute("INSERT INTO accounts(username, password) VALUES (%s, %s)", (username, password))
-        print("444")
+        cur = mysql.connection.cursor()         
+        cur.execute("INSERT INTO accounts(username, password) VALUES (%s, %s)", (username, password))        
         mysql.connection.commit()
         cur.close()
         return 'success'
