@@ -3,9 +3,9 @@ Python 3.7.8. Simple connection to MySQL using Flask and getting data from HTML 
 
 Python - 3.7.8
 Mysql  - 8.0.26.0
-
 Flask-MySQLdb
 
+--------------------------------------
 Db name ----- logtest
 
 CREATE TABLE IF NOT EXISTS `accounts` (
